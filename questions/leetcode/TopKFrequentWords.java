@@ -30,7 +30,6 @@ public class TopKFrequentWords {
             stringList.add(priorityQueue.poll().getValue());
         }
         return stringList;
-
     }
 
     public static void main(String[] args) {
