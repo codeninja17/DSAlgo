@@ -79,7 +79,7 @@ public class StringOps {
         System.out.println(stringOps.getSubsequence("abc"));
         System.out.println(stringOps.getPermutations("abc"));
         // stringOps.printSubSequence("abc","");
-        stringOps.printPermutations("abc","");
+        //stringOps.printPermutations("abc","");
     }
 
 }
