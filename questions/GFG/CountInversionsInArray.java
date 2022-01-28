@@ -3,12 +3,19 @@ package questions.GFG;
 // https://www.geeksforgeeks.org/counting-inversions/
 public class CountInversionsInArray {
 
-    public static int countInversions(int arr[],int start , int mid,int end){
+    private static int localInv = 0;
+
+    public static int countInversions(int[] arr, int start , int mid, int end){
         // create two temp arrays
         int l = mid-start+1;
         int m = end-mid;
         int [] temp_array_first = new int[l];
         int [] temp_array_second = new int[m];
+
+        if(temp_array_first.length == 1 && temp_array_second.length ==1){
+            if(arr[start] > arr[end])
+               localInv++;
+        }
 
         // copy to temp array
         int i = 0;
@@ -47,23 +54,27 @@ public class CountInversionsInArray {
         return sum;
     }
 
-    public static int divideArr(int[] arr,int start, int end,int sum){
+    public static int divideArr(int[] arr,int start, int end){
 
         if(start == end || start > end){
-            return sum;
+            return 0;
         }
 
         int mid = start+(end-start)/2;
-        sum = divideArr(arr,start,mid,sum) + divideArr(arr,mid+1,end,sum);
+        int sum = divideArr(arr,start,mid) + divideArr(arr,mid+1,end);
         sum+=countInversions(arr,start,mid,end);
         return sum;
     }
 
+    public static boolean isIdealPermutation(int[] nums) {
+        int sum = divideArr(nums,0,nums.length-1);
+        return sum == localInv;
+    }
+
     public static void main(String[] args) {
-        int [] arr = {4,3,2,7,1,9,10,0};
-        int sum = 0;
-        sum+=divideArr(arr,0,arr.length-1,sum);
-        System.out.println(sum);
+        int[] arr = {4, 3, 2, 7, 1, 9, 10, 0};
+        System.out.println(isIdealPermutation(arr));
+        System.out.println(localInv);
     }
 
 }

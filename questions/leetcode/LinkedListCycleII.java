@@ -76,6 +76,7 @@ public class LinkedListCycleII {
 class ListNode {
     int value;
     ListNode next;
+    ListNode(){}
     ListNode(int x) {
         value = x;
         next = null;

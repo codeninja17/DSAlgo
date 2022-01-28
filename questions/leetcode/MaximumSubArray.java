@@ -28,6 +28,7 @@ public class MaximumSubArray     {
         }
         int maxRightLeft = Math.max( maxSum(arr,l,mid) ,  maxSum(arr,mid+1,h));
         int max = Math.max(maxRightLeft , maxLeftSum + maxRightSum);
+        System.out.println("Max for start :" + l + " and end : " + h + " is " + max);
         return max;
     }
 
