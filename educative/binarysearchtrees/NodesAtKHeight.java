@@ -22,6 +22,9 @@ public class NodesAtKHeight {
 
         NodesAtKHeight nodesAtKHeight = new NodesAtKHeight();
         System.out.println(nodesAtKHeight.findkNodes(binarySearchTreeOps.getRoot(),1));
+        System.out.println(nodesAtKHeight.findkNodes(binarySearchTreeOps.getRoot(),3));
+        System.out.println(nodesAtKHeight.findkNodes(binarySearchTreeOps.getRoot(),4));
+        System.out.println(nodesAtKHeight.findkNodes(binarySearchTreeOps.getRoot(),15));
     }
 
 }
